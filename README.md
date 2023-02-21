@@ -1,5 +1,3 @@
-#Sales Price Optimization
-
 This is a simple Python script that uses the scipy.optimize library to find the optimal sales price for a product given historical sales data. The script prompts the user to input the sales data for two different prices, calculates the angular coefficient of the sales line, and defines a function to minimize the negative revenue. The optimization is performed using the minimize function from scipy.optimize, which finds the maximum of the revenue function. Finally, the script outputs the optimal price, expected sales, and expected revenue. 
 
 This code is designed to help businesses maximize revenue by finding the best price point and associated sales level for a product. The code takes in two sets of historical data - prices and sales - and calculates the angular coefficient of a line that fits the data. This angular coefficient represents the rate of change in revenue for each additional unit of sales.
