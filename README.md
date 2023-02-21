@@ -28,19 +28,27 @@ pip install scipy
 Clone this repository to your local machine:
 git clone https://github.com/<your-username>/sales-price-optimization.git
 
+  
 Navigate to the cloned repository:
+  
 cd sales-price-optimization
+  
 
 Run the script:
+  
 python sales_price_optimization.py
 
+  
 Follow the prompts and enter the sales data for two different prices.
 
 The script will output the optimal price, expected sales, and expected revenue.
 
 
 #License
+  
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+  
 #Acknowledgments
+  
 This project was inspired by the need to optimize the sales price for a product based on historical sales data. The scipy.optimize library made it easy to find the maximum of a revenue function and obtain the optimal sales price.
