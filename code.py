@@ -41,6 +41,6 @@ print("Expected Sales:")
 print(int(maxpublico.x))
 print(" ")
 print("Expected Revenue:")
-print(int(Pmaxreceita*maxpublico.x))
+print(float(Pmaxreceita*maxpublico.x))
 
 
