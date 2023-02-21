@@ -26,7 +26,7 @@ pip install scipy
 #Usage
 
 Clone this repository to your local machine:
-git clone https://github.com/<your-username>/sales-price-optimization.git
+git clone https://github.com/<your-username/sales-price-optimization.git
 
   
 Navigate to the cloned repository:
