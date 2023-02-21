@@ -1,46 +1,41 @@
-# Lets import scipy library to use the minimize (in this case, maximize)
 from scipy.optimize import minimize
 
+# Ask for input data: prices and sales
 
-
-print("Inform the number of sales on two diferent periods of time")
+print("Enter the number of sales and prices for two different time periods")
 print(" ")
 
+price1 = int(input("Enter the first price: "))
+sales1 = int(input("Enter the number of sales at this price: "))
 
-# Input the historical data: prices and sales
+price2 = int(input("Enter the second price: "))
+sales2 = int(input("Enter the number of sales at this price: "))
 
-preco1 = int(input("Inform first price  "))
-publico1 = int(input("Inform the number of sales for this price  "))
+# Calculate the angular coefficient of the line that connects the two data points
 
-preco2 = int(input("Inform the second price  "))
-publico2 = int(input("Inform the number of sales for this price  "))
+M = ((price2 - price1)/(sales2 - sales1))
 
-
-# Now we look for the angular coefficient
-
-M = ((preco2 - preco1)/(publico2 - publico1))
-
-# Define a function using the equation of a line
+# Define a function that represents the revenue as a function of the price
+# Note that we multiply the function by -1 so that the minimize function will find the maximum instead of the minimum
 
 def R(x):
-  return -(x*(M*(x-publico2) + preco2))
+    return -(x*(M*(x-sales2) + price2))
 
-# Apply optimization, the scipy library brings only the minimize option of optimization, so we must multiply the function by minus one
+# Find the optimal price that maximizes revenue
+# The minimize function is used to maximize the R function
 
-maxpublico = minimize(R,1)
+maxsales = minimize(R,1)
 
+# Calculate the optimal price and expected sales and revenue
 
-
-Pmaxreceita = M*(int(maxpublico.x)-publico2) + preco2
+Pmaxrevenue = M*(int(maxsales.x)-sales2) + price2
 
 print(" ")
-print("Best Price:")
-print(float(Pmaxreceita))
+print("Best price:")
+print(float(Pmaxrevenue))
 print(" ")
-print("Expected Sales:")
-print(int(maxpublico.x))
+print("Expected number of sales:")
+print(int(maxsales.x))
 print(" ")
-print("Expected Revenue:")
-print(float(Pmaxreceita*maxpublico.x))
-
-
+print("Expected revenue:")
+print(float(Pmaxrevenue*maxsales.x))
